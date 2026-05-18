@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/logo.svg" alt="RecallOS Logo" width="64" height="64" />
+<img src="public/branding/logo.svg" alt="RecallOS Logo" width="64" height="64" />
 
 # RecallOS
 
