@@ -1,0 +1,113 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            String     @id @default(uuid())
+  email         String     @unique
+  name          String?
+  createdAt            DateTime   @default(now())
+  updatedAt            DateTime   @updatedAt
+  
+  // Syncing
+  providerToken        String?
+  providerRefreshToken String?
+  lastSyncAt           DateTime?
+
+  videos               Video[]
+  categories           Category[]
+}
+
+model Video {
+  id            String      @id @default(uuid())
+  userId        String
+  youtubeId     String
+  url           String
+  title         String
+  channelName   String
+  thumbnailUrl  String?
+  duration      Int?        // in seconds
+
+  // Consumption state
+  status        String      @default("SAVED") // SAVED, STARTED, IN_PROGRESS, COMPLETED, ARCHIVED
+  priority      Priority    @default(MEDIUM)
+  progress      Int?        // last watched timestamp or percentage
+
+  // Advanced Watch Lifecycle Engine
+  startedAt                    DateTime?
+  lastOpenedAt                 DateTime?
+  openCount                    Int       @default(0)
+  archivedAt                   DateTime?
+  manuallyCompleted            Boolean   @default(false)
+  inferredCompletionConfidence Float     @default(0.0)
+
+  // Organization
+  categoryId    String?
+
+  // Completion tracking
+  completedAt    DateTime?
+  lastViewedAt   DateTime?
+
+  // Rich Metadata & Signals
+  description         String?     @db.Text
+  youtubeCategoryId   String?
+  tags                String[]
+
+  // Categorization Intelligence
+  categoryConfidence  Float?
+  isCategoryOverridden Boolean    @default(false)
+  classificationSignals String?
+
+  // Reminders & Resurfacing
+  lastResurfaced DateTime?
+  reminderDate   DateTime?
+
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category      Category?   @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  notes         Note[]
+
+  @@unique([userId, youtubeId])
+}
+
+model Category {
+  id            String    @id @default(uuid())
+  userId        String
+  name          String
+  slug          String
+  color         String    @default("bg-zinc-500")
+  videos        Video[]
+
+  createdAt     DateTime  @default(now())
+
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, name])
+  @@unique([userId, slug])
+}
+
+model Note {
+  id            String    @id @default(uuid())
+  videoId       String
+  content       String
+  timestamp     Int?
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  video         Video     @relation(fields: [videoId], references: [id], onDelete: Cascade)
+}
+
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
