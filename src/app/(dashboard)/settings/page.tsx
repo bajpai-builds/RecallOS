@@ -260,7 +260,7 @@ export default function SettingsPage() {
                 onClick={() => {
                   resetTour()
                   toast.success("Welcome back! Redirecting to Dashboard... ✨")
-                  window.location.href = "/"
+                  window.location.href = "/dashboard"
                 }}
                 className="flex items-center justify-center gap-1.5 px-4.5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-[11px] active:scale-95 transition-all cursor-pointer shadow-md shadow-indigo-600/10 shrink-0"
               >

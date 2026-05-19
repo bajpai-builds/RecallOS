@@ -69,7 +69,7 @@ export default function SignUpPage() {
         } else {
           toast.success("Account created successfully! Entering companion workspace... ✨", { id: "signup-toast" })
           // Automatically navigate
-          router.push("/")
+          router.push("/dashboard")
           router.refresh()
         }
       }

@@ -45,7 +45,7 @@ export default function LoginPage() {
         toast.success("Welcome back! Loading companion workspace... ✨", { id: "auth-toast" })
         
         // Immediately navigate to client dashboard
-        router.push("/")
+        router.push("/dashboard")
         router.refresh()
       }
     } catch (err: any) {

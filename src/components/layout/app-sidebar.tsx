@@ -24,7 +24,7 @@ import { formatCategoryName } from "@/lib/ux-formatter"
 const items = [
   {
     title: "Dashboard",
-    url: "/",
+    url: "/dashboard",
     icon: Sparkles,
   },
   {
