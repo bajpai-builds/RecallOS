@@ -197,4 +197,13 @@ RecallOS is a quiet space to remember what once sparked your curiosity, letting 
 
 **Made for depth. Built to last.**
 
+## Note
+
+Google OAuth verification for RecallOS is currently under review because the application uses YouTube Readonly permissions to organize users' Watch Later content.
+
+During this review period, some users may see Google's "This app isn't verified" screen before signing in.
+
+This is expected and related only to Google's verification process — not to the security or functionality of RecallOS.
+
+Verification typically takes around 3–7 days after submission.
 </div>
