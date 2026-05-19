@@ -2,6 +2,7 @@ import { getAuthenticatedUser, getUserVideos } from "@/lib/queries"
 import { VideoCard } from "@/components/videos/video-card"
 import { EmptyState } from "@/components/ui/empty-state"
 import { PlayCircle } from "lucide-react"
+import { Video } from "@/types/video"
 
 export default async function LibraryPage() {
   const user = await getAuthenticatedUser()
@@ -25,7 +26,7 @@ export default async function LibraryPage() {
         />
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {videos.map((video) => (
+          {videos.map((video: Video) => (
             <VideoCard key={video.id} video={video} showCategory />
           ))}
         </div>

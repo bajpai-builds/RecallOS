@@ -11,6 +11,7 @@ import { formatPriority, getPriorityStyle, formatCategoryName, formatWatchState,
 import { registerWatchEvent } from "@/actions/video"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
+import { Video } from "@/types/video"
 
 function formatDuration(seconds: number | null) {
   if (!seconds) return "Unknown"
@@ -22,20 +23,7 @@ function formatDuration(seconds: number | null) {
 }
 
 type VideoCardProps = {
-  video: {
-    id: string
-    title: string
-    channelName: string
-    thumbnailUrl: string | null
-    duration: number | null
-    status: string
-    priority: string
-    url: string
-    completedAt?: Date | null
-    categoryId?: string | null
-    category?: { name: string; slug: string; color: string } | null
-    classificationSignals?: string | null
-  }
+  video: Video
   showCategory?: boolean
   showCompletedDate?: boolean
   id?: string

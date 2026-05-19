@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { PlayCircle, Clock, Zap, Target } from "lucide-react"
 import { getAuthenticatedUser, getVideoStats } from "@/lib/queries"
 import prisma from "@/lib/db"
+import { Video } from "@/types/video"
 
 export default async function DashboardPage() {
   const user = await getAuthenticatedUser()
@@ -100,7 +101,7 @@ export default async function DashboardPage() {
             </CardHeader>
             <CardContent className="p-5 md:p-6">
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {continueWatchingVideos.map((video, index) => (
+                {continueWatchingVideos.map((video: Video, index: number) => (
                   <VideoCard key={video.id} video={video} showCategory id={index === 0 ? "onboarding-video-card-0" : undefined} />
                 ))}
               </div>
@@ -130,7 +131,7 @@ export default async function DashboardPage() {
               />
             ) : (
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {resurfacedVideos.map((video, index) => (
+                {resurfacedVideos.map((video: Video, index: number) => (
                   <VideoCard 
                     key={video.id} 
                     video={video} 

@@ -2,6 +2,7 @@ import { getAuthenticatedUser, getUserVideos, getVideoStats } from "@/lib/querie
 import { VideoCard } from "@/components/videos/video-card"
 import { EmptyState } from "@/components/ui/empty-state"
 import { Trophy, CheckCircle, Star, Flame } from "lucide-react"
+import { Video } from "@/types/video"
 
 export default async function CompletedPage() {
   const user = await getAuthenticatedUser()
@@ -41,7 +42,7 @@ export default async function CompletedPage() {
           </div>
         </div>
         <div className="flex items-center gap-4 rounded-2xl glass-card p-5 shadow-md hover:border-border/80 transition-colors">
-          <div className="rounded-xl bg-rose-500/10 p-3 border border-rose-500/10 text-rose-500 dark:text-rose-400">
+          <div className="rounded-xl bg-rose-500/10 p-3 border border-rose-500/10 text-rose-500 dark:text-rose-450">
             <Flame className="w-5.5 h-5.5 stroke-[1.5]" />
           </div>
           <div>
@@ -59,7 +60,7 @@ export default async function CompletedPage() {
         />
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {videos.map((video) => (
+          {videos.map((video: Video) => (
             <VideoCard key={video.id} video={video} showCategory showCompletedDate />
           ))}
         </div>

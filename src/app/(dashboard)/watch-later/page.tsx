@@ -3,6 +3,7 @@ import { VideoCard } from "@/components/videos/video-card"
 import { EmptyState } from "@/components/ui/empty-state"
 import { Clock, Zap, AlertTriangle } from "lucide-react"
 import prisma from "@/lib/db"
+import { Video } from "@/types/video"
 
 export default async function WatchLaterPage() {
   const user = await getAuthenticatedUser()
@@ -71,7 +72,7 @@ export default async function WatchLaterPage() {
         />
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {videos.map((video) => (
+          {videos.map((video: Video) => (
             <VideoCard key={video.id} video={video} showCategory />
           ))}
         </div>
