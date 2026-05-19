@@ -6,13 +6,18 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "RecallOS",
   description:
     "AI-powered content memory system for organizing and rediscovering saved YouTube content.",
+
   applicationName: "RecallOS",
   authors: [{ name: "RecallOS" }],
   metadataBase: new URL("https://recall-os-gamma.vercel.app"),
+
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 
   openGraph: {
     title: "RecallOS",
