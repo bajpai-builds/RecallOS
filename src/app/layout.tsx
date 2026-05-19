@@ -6,13 +6,21 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "RecallOS - Your Intelligent Content Memory Platform",
-  description: "Intelligently organize, rediscover, and remember saved digital content, videos, learning resources, and flowing knowledge.",
-  icons: {
-    icon: "/branding/favicon.svg",
-    shortcut: "/branding/favicon.svg",
-    apple: "/branding/favicon.svg",
+export const metadata = {
+  title: "RecallOS",
+  description:
+    "AI-powered content memory system for organizing and rediscovering saved YouTube content.",
+  applicationName: "RecallOS",
+  authors: [{ name: "RecallOS" }],
+  metadataBase: new URL("https://recall-os-gamma.vercel.app"),
+
+  openGraph: {
+    title: "RecallOS",
+    description:
+      "AI-powered content memory system for organizing and rediscovering saved YouTube content.",
+    url: "https://recall-os-gamma.vercel.app",
+    siteName: "RecallOS",
+    type: "website",
   },
 };
 

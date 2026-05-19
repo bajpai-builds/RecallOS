@@ -30,8 +30,8 @@ const Github = (props: React.ComponentPropsWithoutRef<"svg">) => (
 
 
 export const metadata = {
-  title: "RecallOS - Remember what matters.",
-  description: "Intelligently organize, resurface, and rediscover your saved YouTube Watch Later playlists before they are forgotten.",
+  title: "RecallOS",
+  description: "AI-powered content memory system for organizing and rediscovering saved YouTube content.",
 }
 
 export default async function LandingPage() {
@@ -47,38 +47,38 @@ export default async function LandingPage() {
     {
       icon: Sparkles,
       color: "text-indigo-500 bg-indigo-500/10 border-indigo-500/20",
-      title: "Smart Categorization",
-      description: "Auto-groups content into structured learning paths (Tech, Design, Science) using semantic classifications.",
+      title: "Smart Organization",
+      description: "Automatically groups videos into collections.",
     },
     {
       icon: History,
       color: "text-sky-500 bg-sky-500/10 border-sky-500/20",
-      title: "Continue Watching",
-      description: "Resumes playback precisely where you left off. Every active resource is tracked automatically.",
+      title: "Rediscover Content",
+      description: "Surface forgotten videos worth watching.",
+    },
+    {
+      icon: Clock,
+      color: "text-amber-500 bg-amber-500/10 border-amber-500/20",
+      title: "Watch Progress",
+      description: "Track videos you still want to finish.",
+    },
+    {
+      icon: BookOpen,
+      color: "text-emerald-500 bg-emerald-500/10 border-emerald-500/20",
+      title: "Personal Content Memory",
+      description: "Turn saved content into a searchable memory system.",
     },
     {
       icon: Zap,
-      color: "text-amber-500 bg-amber-500/10 border-amber-500/20",
-      title: "Smart Resurfacing",
-      description: "Gently surfaces aging high-priority items so they don't drown in endless bookmark backlogs.",
-    },
-    {
-      icon: Target,
-      color: "text-emerald-500 bg-emerald-500/10 border-emerald-500/20",
-      title: "Watch Memory",
-      description: "Logs completed videos into a searchable, categorized database of your personal knowledge.",
-    },
-    {
-      icon: Shield,
       color: "text-purple-500 bg-purple-500/10 border-purple-500/20",
-      title: "Strict Privacy",
-      description: "Your data is entirely yours. We do not sell your personal details or share synced YouTube watch history.",
+      title: "AI Categorization",
+      description: "Organize content intelligently.",
     },
     {
       icon: Smartphone,
       color: "text-rose-500 bg-rose-500/10 border-rose-500/20",
       title: "Mobile Friendly",
-      description: "Fully responsive layouts. Catalog, tag, and read summaries on your phone, tablet, or laptop.",
+      description: "Use RecallOS anywhere.",
     },
   ]
 
@@ -254,26 +254,30 @@ export default async function LandingPage() {
                   <span className="text-rose-500 font-extrabold">Most are forgotten.</span>
                 </p>
                 
+                <p className="text-foreground/90 font-medium">
+                  RecallOS transforms saved YouTube content into an intelligent personal memory system.
+                </p>
+
                 <div className="pt-2 space-y-3">
                   <p className="font-bold text-foreground">
-                    RecallOS turns saved content into an organized personal memory system by:
+                    Instead of losing valuable videos inside an endless Watch Later list, users can:
                   </p>
                   <ul className="space-y-2.5 pl-1.5">
                     <li className="flex items-start gap-2.5">
                       <span className="text-indigo-500 font-extrabold text-sm select-none">•</span>
-                      <span>Automatically organizing videos into collections</span>
+                      <span>Automatically organize content into meaningful collections</span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="text-indigo-500 font-extrabold text-sm select-none">•</span>
-                      <span>Resurfacing forgotten content</span>
+                      <span>Rediscover forgotten videos</span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="text-indigo-500 font-extrabold text-sm select-none">•</span>
-                      <span>Tracking watch progress</span>
+                      <span>Track viewing progress</span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="text-indigo-500 font-extrabold text-sm select-none">•</span>
-                      <span>Helping users return to valuable information</span>
+                      <span>Continue learning without losing context</span>
                     </li>
                   </ul>
                 </div>
@@ -398,11 +402,13 @@ export default async function LandingPage() {
             </div>
             
             <h2 className="text-xl md:text-2xl font-extrabold tracking-tight text-foreground">
-              About RecallOS
+              What is RecallOS?
             </h2>
             
             <p className="text-sm text-muted-foreground leading-relaxed font-medium text-left md:text-center">
-              RecallOS is designed to help people remember valuable content they once wanted to watch, learn from, or revisit. Reviewers and users can link their YouTube library through a secure Google OAuth process. We extract your watch playlists in the background, sort items cleanly, and present them in a distractor-free companion dashboard so you can actually study the materials you saved.
+              RecallOS is designed to help people remember valuable content they once intended to watch, learn from, or revisit.
+              <br className="hidden md:block" />
+              Instead of allowing Watch Later to become digital clutter, RecallOS helps users organize and resurface important information.
             </p>
             
             <div className="flex flex-wrap justify-center gap-6 text-[10px] font-black text-muted-foreground pt-4 select-none">
