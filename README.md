@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/logo.svg" alt="RecallOS Logo" width="64" height="64" />
+<img src="public/branding/logo.svg" alt="RecallOS Logo" width="64" height="64" />
 
 # RecallOS
 
@@ -185,7 +185,7 @@ If you have ideas for features, feel free to open an issue to chat about it. For
 
 ## License
 
-This project is open-source and licensed under the [MIT License](LICENSE).
+This project is open-source.
 
 ---
 
