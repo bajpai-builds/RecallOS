@@ -135,8 +135,8 @@ export default async function LandingPage() {
             <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 bg-clip-text text-transparent">finally has memory.</span>
           </h1>
 
-          <p className="mt-6 text-sm sm:text-base md:text-lg text-muted-foreground font-medium max-w-2xl leading-relaxed">
-            RecallOS intelligently organizes, resurfaces, and helps you rediscover saved YouTube content before it gets forgotten forever.
+          <p className="mt-6 text-sm sm:text-base md:text-lg text-muted-foreground font-medium max-w-3xl leading-relaxed">
+            RecallOS helps organize, rediscover, and intelligently manage saved YouTube content so important videos do not disappear into endless Watch Later lists.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
@@ -144,14 +144,14 @@ export default async function LandingPage() {
               href="/signup"
               className="flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 rounded-xl bg-primary hover:opacity-90 text-primary-foreground font-black text-sm shadow-lg shadow-primary/20 active:scale-[0.98] transition-all group"
             >
-              Get Started Free
+              Get Started
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
             <Link
-              href="#problem"
+              href="#solution"
               className="flex items-center justify-center w-full sm:w-auto px-7 py-3.5 rounded-xl bg-surface border border-border text-foreground hover:bg-surface-hover font-bold text-sm transition-all"
             >
-              Learn More
+              View Features
             </Link>
           </div>
 
@@ -246,15 +246,37 @@ export default async function LandingPage() {
                 <Trash2 className="w-5 h-5 stroke-[1.8]" />
               </div>
               <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
-                The Endless Cycle of Digital Clutter
+                Your Watch Later Fails by Default
               </h2>
               <div className="space-y-4 text-sm text-muted-foreground leading-relaxed font-medium">
-                <p>
-                  We catalog bookmarks, save tutorials, and add guides to our &quot;Watch Later&quot; playlist with every intention of learning from them.
+                <p className="text-foreground font-semibold text-base leading-snug">
+                  People save hundreds of videos intending to watch them later. <br />
+                  <span className="text-rose-500 font-extrabold">Most are forgotten.</span>
                 </p>
-                <p>
-                  But YouTube algorithms are built to distract, dragging us to the next viral video. Over time, that learning playlist turns into a digital graveyard where great insights are forgotten forever.
-                </p>
+                
+                <div className="pt-2 space-y-3">
+                  <p className="font-bold text-foreground">
+                    RecallOS turns saved content into an organized personal memory system by:
+                  </p>
+                  <ul className="space-y-2.5 pl-1.5">
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-indigo-500 font-extrabold text-sm select-none">•</span>
+                      <span>Automatically organizing videos into collections</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-indigo-500 font-extrabold text-sm select-none">•</span>
+                      <span>Resurfacing forgotten content</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-indigo-500 font-extrabold text-sm select-none">•</span>
+                      <span>Tracking watch progress</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-indigo-500 font-extrabold text-sm select-none">•</span>
+                      <span>Helping users return to valuable information</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
 
